@@ -72,7 +72,7 @@ namespace RM.Common.DotNetData
                 for (int i = 0; i < dt.Columns.Count; i++)
                 {
                     string key = dt.Columns[i].ColumnName;
-                    ht[key.ToUpper()] = dr[key];
+                    ht[key] = dr[key];
                 }
             }
             return ht;

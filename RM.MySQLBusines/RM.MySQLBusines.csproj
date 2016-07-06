@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DAL\Game_User_DAL.cs" />
     <Compile Include="DAL\Notice_DAL.cs" />
     <Compile Include="DAL\Proxy_DAL.cs" />
     <Compile Include="IDAO\I_Notice_DAO.cs" />
