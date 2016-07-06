@@ -1,0 +1,75 @@
+﻿<form action="" method="post" class="form form-horizontal" id="form-member-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">用户名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" id="Account" name="Account" disabled="disabled">
+        </div>
+
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">可提现电子币：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" id="remoeny" name="remoeny" disabled="disabled">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>提现金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="" id="DrawSumMoney" name="DrawSumMoney" datacol="yes" err="提现金额"
+                   checkexpession="NotNull">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">实际到账金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" id="DrawRealMoney" name="DrawRealMoney" disabled="disabled">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">银行用户名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" id="RealName" name="RealName" disabled="disabled" datacol="yes" err="银行用户名"
+                   checkexpession="NotNull">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>银行名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写银行名称" id="BankName" name="BankName" datacol="yes" err="银行名称"
+                   checkexpession="NotNull">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>开户行：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写开户行" id="BandAddress" name="BandAddress" datacol="yes" err="开户行"
+                   checkexpession="NotNull">
+
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>卡号：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写卡号" id="BandCardNO" name="BandCardNO" datacol="yes" err="卡号"
+                   checkexpession="NotNull">
+
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">登陆密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="password" class="input-text" placeholder="请填写登陆密码" id="loginpwd" name="loginpwd" datacol="yes" err="登陆密码"
+                   checkexpession="NotNull">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-3 col-sm-offset-2">
+            <input class="btn btn-primary radius" type="button" onclick="return submitdraw();" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>

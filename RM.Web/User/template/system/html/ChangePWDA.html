@@ -1,0 +1,32 @@
+﻿<form action="" method="post" class="form form-horizontal" id="form-pwd-modify">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">原登录密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="password" class="input-text" placeholder="原登录密码" id="pwda" name="pwda" datacol="yes" err="原登录密码"
+                   checkexpession="NotNull">
+        </div>
+
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">新登录密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="password" class="input-text" placeholder="新登录密码(大于6位小于10位)" id="pwdb" name="pwdb" datacol="yes" err="新登录密码"
+                   checkexpession="MaxStr" length="6" maxlength="10">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>确认登录密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="password" class="input-text" placeholder="确认登录密码(大于6位小于10位)" id="pwdc" name="pwdc" datacol="yes" err="确认登录密码"
+                   checkexpession="MaxStr" length="6" maxlength="10">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-3 col-sm-offset-2">
+            <input class="btn btn-primary radius" type="button" onclick="return submitModify();" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>

@@ -1,0 +1,52 @@
+﻿<form action="" method="post" class="form form-horizontal" id="form-trans-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">用户名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" id="Account" name="Account" disabled="disabled">
+        </div>
+
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">电子币余额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" id="remoeny" name="remoeny" disabled="disabled">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>转入账号：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写转入账号" id="recaccount" name="recaccount" datacol="yes" err="转入账号"
+                   checkexpession="NotNull">
+        </div>
+    </div>
+    <div class="row cl" id="rel">
+        <label class="form-label col-xs-4 col-sm-2">转入账号真实姓名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" id="relname" name="relname" disabled="disabled">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>转入金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写转入金额" id="tomoney" name="tomoney" datacol="yes" err="转入金额"
+                   checkexpession="NotNull">
+
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">登陆密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="password" class="input-text " placeholder="请填写登陆密码" id="loginpwd" name="loginpwd" datacol="yes" err="登陆密码"
+                   checkexpession="NotNull">
+
+        </div>
+
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-3 col-sm-offset-2">
+            <input class="btn btn-primary radius" type="button" onclick="return submittransf();" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>
