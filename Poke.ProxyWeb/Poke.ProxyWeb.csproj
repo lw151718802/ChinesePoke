@@ -98,9 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Ajax\LoginHandler.ashx" />
     <Content Include="Ajax\NoticeHandle.ashx" />
     <None Include="Web.Debug.config">
