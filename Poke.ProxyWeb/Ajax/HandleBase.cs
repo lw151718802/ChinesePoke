@@ -112,7 +112,7 @@ namespace Poke.ProxyWeb.Ajax
             context.Response.CacheControl = "no-cache";
 
             _PageContext = context;
-
+             
 
             //if (RequestSession.GetSessionUser() == null)
             //{
