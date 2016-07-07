@@ -10,6 +10,8 @@ namespace Poke.ProxyWeb.Ajax
     public class HandleBase : IHttpHandler, IRequiresSessionState
     {
         #region 属性定义
+        public int res_code = 1;
+        public string res_msg = "";
 
         private bool _PageRead = true;
         private bool _PageAdd = true;
@@ -112,17 +114,19 @@ namespace Poke.ProxyWeb.Ajax
             _PageContext = context;
 
 
-            if (RequestSession.GetSessionUser() == null)
-            {
+            //if (RequestSession.GetSessionUser() == null)
+            //{
 
-                context.Session.Abandon();
-                context.Session.Clear();
-                context.Response.Write("<script>parent.document.location.href='/login.html';</script>");
-                context.Response.End();
-            }
-            _UserID = RequestSession.GetSessionUser().UserId.ToString();
-            _UserName = RequestSession.GetSessionUser().UserName.ToString();
-            _UserAccount = RequestSession.GetSessionUser().UserAccount.ToString();
+            //    context.Session.Abandon();
+            //    context.Session.Clear();
+            //    context.Response.Write("<script>parent.document.location.href='/login.html';</script>");
+            //    context.Response.End();
+            //}
+            //_UserID = RequestSession.GetSessionUser().UserId.ToString();
+            //_UserName = RequestSession.GetSessionUser().UserName.ToString();
+            //_UserAccount = RequestSession.GetSessionUser().UserAccount.ToString();
+
+            _UserID = "100000";
             UpdateValid();
             AddValid();
             DeleteValid();

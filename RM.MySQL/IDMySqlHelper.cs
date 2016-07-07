@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace RM.MySQL
         DataTable ExecuteDataTable(string SQLString, params MySqlParameter[] cmdParms);
         DataTable ExecuteDataTable(string cmdText, int startResord, int maxRecord);
         DataTable getPager(out int recordCount, string selectList, string tableName, string whereStr, string orderExpression, int pageIdex, int pageSize);
+
+        Hashtable GetHashtableById(string tableName, string pkName, string pkVal);
 
 
     }

@@ -10,6 +10,8 @@ using System.Data.Common;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using RM.MySQL;
+using System.Text;
+using RM.Common.DotNetData;
 
 namespace RM.MySQL
 {
@@ -21,6 +23,17 @@ namespace RM.MySQL
         //public string m = ConfigurationManager.AppSettings["MySQL"]; 
         public MySqlHelper(string connString) {
             this.connectionString = connString;
+        }
+
+        public Hashtable GetHashtableById(string tableName, string pkName, string pkVal)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Select * From ").Append(tableName).Append(" Where ").Append(pkName).Append("=?ID");
+            DataTable dt = this.ExecuteDataTable(sb.ToString(), new MySqlParameter[]
+            {
+                new MySqlParameter("?ID", pkVal)
+            });
+            return DataTableHelper.DataTableToHashtable(dt);
         }
         #region ExecuteNonQuery 
         //执行SQL语句，返回影响的记录数 
@@ -334,6 +347,33 @@ namespace RM.MySQL
             recordCount = rows;
             return dt;
         }
+
+        //public MySqlTransaction GetDatabase()
+        //{
+        //    SqlDatabase result;
+        //    if (this.db == null)
+        //    {
+        //        if (ConfigHelper.GetAppSettings("ConStringEncrypt") == "true")
+        //        {
+        //            this.db = new SqlDatabase(DESEncrypt.Decrypt(this.connectionString));
+        //        }
+        //        else
+        //        {
+        //            this.db = new SqlDatabase(this.connectionString);
+        //        }
+        //        result = this.db;
+        //    }
+        //    else
+        //    {
+        //        lock (SqlServerHelper.locker)
+        //        {
+        //            result = this.db;
+        //        }
+        //    }
+        //    return result;
+        //}
+      
+
         #region 创建command 
         private  void PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, string cmdText, MySqlParameter[] cmdParms)
         {

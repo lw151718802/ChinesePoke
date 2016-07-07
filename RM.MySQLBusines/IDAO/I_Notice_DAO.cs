@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace RM.MySQLBusines.IDAO
 {
     public interface  I_Notice_DAO
     {
-         object GetNotice(int NoticeType);
+        Hashtable GetNotice(int NoticeType);
     }
 }

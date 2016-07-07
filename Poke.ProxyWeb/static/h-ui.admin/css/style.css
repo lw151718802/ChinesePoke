@@ -1,0 +1,88 @@
+﻿@charset "utf-8";
+/* 你自己的样式 */
+
+.iframeContent
+{
+    margin: 0px auto;
+    height: 100%;
+    overflow: hidden;
+}
+.div-body
+{
+    border: #ccc 1px solid;
+    border-top: #ccc 0px solid;
+    overflow: auto;
+    scrollbar-face-color: #e4e4e4;
+    scrollbar-heightlight-color: #f0f0f0;
+    scrollbar-3dlight-color: #d6d6d6;
+    scrollbar-arrow-color: #240024;
+    scrollbar-darkshadow-color: #d6d6d6;
+}
+.div-overflow
+{
+    overflow: auto;
+    scrollbar-face-color: #e4e4e4;
+    scrollbar-heightlight-color: #f0f0f0;
+    scrollbar-3dlight-color: #d6d6d6;
+    scrollbar-arrow-color: #240024;
+    scrollbar-darkshadow-color: #d6d6d6;
+}
+
+/**表单验证 begin**/
+.leftImage
+{
+    background: url(/Themes/Images/x1.gif) no-repeat right top;
+    width: 14px;
+    height: 33px;
+}
+.rightImage
+{
+    background: url(/Themes/Images/x3.gif) no-repeat left top;
+    width: 6px;
+    height: 33px;
+}
+.contenImage
+{
+    padding-right: 10px;
+    font-size: 12px;
+    background: url(/Themes/Images/x2.gif) 50% top;
+    text-indent: 5px;
+    line-height: 36px;
+    padding-top: 3px;
+    font-family: Arial;
+    height: 33px;
+}
+.tableTip
+{
+    display: none;
+    filter: alpha(opacity=90);
+    overflow: hidden;
+    position: absolute;
+    border-collapse: collapse;
+    empty-cells: hide;
+    opacity: 0.9;
+}
+.tooltipinputerr
+{
+    background: url(/Themes/Images/validatebox_warning.png) #FFF7E3 no-repeat right center;
+    border: 1px solid #CB8D5C;
+    padding: 3px 2px 2px 2px;
+    height: 15px;
+    line-height: 15px;
+}
+.tooltipinputok
+{
+    border: 1px solid #A8A8A8;
+    font: Verdana, Geneva, sans-serif,宋体;
+    background-image: url(/Themes/Images/input_text_bg.gif);
+    background-position: left top;
+    padding: 3px 2px 2px 2px;
+    height: 15px;
+    line-height: 15px;
+}
+/**表单验证 end**/
+#iframeMainContent
+{
+    height: 100%;
+    width: 100%;
+}
