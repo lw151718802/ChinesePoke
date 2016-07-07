@@ -49,7 +49,7 @@ namespace Poke.ProxyWeb.Ajax
                 context.Response.End();
 
             }
-            else { 
+            else {  
 
                 if (Action == "charge")
                 {
