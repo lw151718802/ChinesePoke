@@ -232,7 +232,7 @@ function checkLoginState(a) {
     return "" == c || null == c || "0" == c || 0 == c ? (1 == a && (window.location = b), !1) : !0
 }
 function handlingException(a) {
-
+    layer.closeAll('loading');
     layer.msg("亲！网络环境差,拼命加载中 ...", {
         time: 2000 //2秒关闭（如果不配置，默认是3秒）
     }, function () {

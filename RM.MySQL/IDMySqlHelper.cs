@@ -27,5 +27,8 @@ namespace RM.MySQL
         Hashtable GetHashtableById(string tableName, string pkName, string pkVal);
 
 
+        DataTable GetPageList(string sql, MySqlParameter[] param, string orderField, string orderType, int pageIndex, int pageSize, ref int count);
+
+
     }
 }

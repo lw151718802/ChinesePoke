@@ -62,6 +62,29 @@ function Game_UserChrage(a,b,c)
         }
     })
 }
+function ajaxAddProxyUser(a, b, c,d,e,f) {
+    $.ajax({
+        type: "post",
+        timeout: timeout,
+        dataType: "json",
+        cache: !0,
+        url: "/Ajax/Game_UserHandler.ashx?t=" + Math.random(),
+        data: {
+            action: 'charge',
+            uid: a,
+            card: b
+        },
+        success: function (rs) {
+
+            f(rs)
+        },
+        error: function (a) {
+            handlingException(a)
+        }
+    })
+}
+
+
 /*
  * Description : 所有接口 请求函数
  * Author : gaoxiaopeng@ddtkj.com

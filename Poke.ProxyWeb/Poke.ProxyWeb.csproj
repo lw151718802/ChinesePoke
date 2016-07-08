@@ -76,6 +76,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -968,6 +972,7 @@
     <Content Include="static\h-ui\images\verticalTab\tabNav_right.png" />
     <Content Include="static\h-ui\images\verticalTab\tab_bg.png" />
     <Content Include="static\h-ui\js\H-ui.js" />
+    <Content Include="static\js\common\address.js" />
     <Content Include="static\js\common\Common.js" />
     <Content Include="static\js\common\common_ajaxfunction_main.js" />
     <Content Include="static\js\common\Validator.js" />
@@ -1015,6 +1020,9 @@
     <Content Include="static\h-ui\images\Thumbs.db" />
     <Content Include="static\h-ui\images\ucnter\Thumbs.db" />
     <Content Include="Ajax\ProxyInfoHandler.ashx" />
+    <Content Include="Ajax\GetPage.ashx" />
+    <Content Include="static\js\common\region_info.json" />
+    <Content Include="Ajax\AddProxy.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1054,6 +1062,10 @@
     <Content Include="User\gameuser\gameuserrecharge.aspx" />
     <Content Include="User\index.aspx" />
     <Content Include="User\notice.aspx" />
+    <Content Include="User\proxy\proxy_charge.aspx" />
+    <Content Include="User\proxy\proxy_chargelist.aspx" />
+    <Content Include="User\proxy\proxy_list.aspx" />
+    <Content Include="User\proxy\prxoy_add.aspx" />
     <Content Include="User\_footer.html" />
     <Content Include="User\_header.html" />
     <Content Include="User\_menu.html" />
@@ -1061,8 +1073,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajax\AddProxy.ashx.cs">
+      <DependentUpon>AddProxy.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Ajax\Game_UserHandler.ashx.cs">
       <DependentUpon>Game_UserHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\GetPage.ashx.cs">
+      <DependentUpon>GetPage.ashx</DependentUpon>
     </Compile>
     <Compile Include="Ajax\HandleBase.cs" />
     <Compile Include="Ajax\LoginHandler.ashx.cs">
@@ -1102,6 +1120,34 @@
     </Compile>
     <Compile Include="User\notice.aspx.designer.cs">
       <DependentUpon>notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\proxy\proxy_charge.aspx.cs">
+      <DependentUpon>proxy_charge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\proxy\proxy_charge.aspx.designer.cs">
+      <DependentUpon>proxy_charge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\proxy\proxy_chargelist.aspx.cs">
+      <DependentUpon>proxy_chargelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\proxy\proxy_chargelist.aspx.designer.cs">
+      <DependentUpon>proxy_chargelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\proxy\proxy_list.aspx.cs">
+      <DependentUpon>proxy_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\proxy\proxy_list.aspx.designer.cs">
+      <DependentUpon>proxy_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\proxy\prxoy_add.aspx.cs">
+      <DependentUpon>prxoy_add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\proxy\prxoy_add.aspx.designer.cs">
+      <DependentUpon>prxoy_add.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

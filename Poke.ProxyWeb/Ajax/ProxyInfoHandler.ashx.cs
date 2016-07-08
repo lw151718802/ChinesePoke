@@ -39,6 +39,9 @@ namespace Poke.ProxyWeb.Ajax
             context.Response.Clear();
             context.Response.Write(Newtonsoft.Json.JsonConvert.SerializeObject(obj));
             context.Response.End();
+
+
+
         }
 
 

@@ -158,6 +158,8 @@ namespace RM.MySQL
                 }
             }
         }
+
+
         /// <summary> 
         /// 执行一条计算查询结果语句，返回查询结果（object）。 
         /// </summary> 
@@ -172,6 +174,40 @@ namespace RM.MySQL
                     try
                     {
                         PrepareCommand(cmd, connection, null, SQLString, cmdParms);
+                        object obj = cmd.ExecuteScalar();
+                        cmd.Parameters.Clear();
+                        if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+                        {
+                            return null;
+                        }
+                        else
+                        {
+                            return obj;
+                        }
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+        }
+
+
+        /// <summary> 
+        /// 执行一条计算查询结果语句，返回查询结果（object）。 
+        /// </summary> 
+        /// <param name="SQLString">计算查询结果语句</param> 
+        /// <returns>查询结果（object）</returns> 
+        public object ExecuteScalar(StringBuilder SQLString, params MySqlParameter[] cmdParms)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    try
+                    {
+                        PrepareCommand(cmd, connection, null, SQLString.ToString(), cmdParms);
                         object obj = cmd.ExecuteScalar();
                         cmd.Parameters.Clear();
                         if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
@@ -348,6 +384,43 @@ namespace RM.MySQL
             return dt;
         }
 
+
+        public DataTable GetPageList(string sql, MySqlParameter[] param, string orderField, string orderType, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder sb = new StringBuilder();
+            DataTable result;
+            try
+            {
+                int num = (pageIndex - 1) * pageSize;
+                int num2 =  pageSize;
+                sb.Append(string.Concat(new object[]
+                {
+                   
+                    sql,
+                   " Order By " + orderField + " " + orderType,
+                    " LIMIT ",
+                    num +" ,",
+                    num2
+                }));
+
+                count = Convert.ToInt32(this.ExecuteScalar(new StringBuilder("Select Count(1) From (" + sql + ") As t"), param));
+                result = this.ExecuteDataTable(sb.ToString(), param);
+            }
+            catch (Exception e)
+            {
+                //this.Logger.WriteLog(string.Concat(new string[]
+                //{
+                //    "-----------数据分页（Oracle）-----------\r\n",
+                //    sb.ToString(),
+                //    "\r\n",
+                //    e.Message,
+                //    "\r\n"
+                //}));
+                result = null;
+            }
+            return result;
+        }
+
         //public MySqlTransaction GetDatabase()
         //{
         //    SqlDatabase result;
@@ -372,7 +445,7 @@ namespace RM.MySQL
         //    }
         //    return result;
         //}
-      
+
 
         #region 创建command 
         private  void PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, string cmdText, MySqlParameter[] cmdParms)

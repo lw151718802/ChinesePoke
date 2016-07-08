@@ -1,12 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="notice.aspx.cs" Inherits="Poke.ProxyWeb.User.notice" %>
 
 
+
+
+
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+   <!--#include file="_meta.html"-->
     <style>
         
 .detail_box{ width:1100px; margin:30px auto;}
@@ -21,14 +25,27 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-   <div class="detail_box">
+      
+   
+    <div class="page-container">
+         <div class="panel panel-primary">
+	<div class="panel-header">系统公告</div>
+	<div class="panel-body">   <div class="detail_box">
 <div class="top_tit"><%=title %></div>	
 <div class="fb_time">发表时间：<%=time %>    </div>
 <div class="detail_info">
     <%=content %>
 </div>
+</div></div>
 </div>
-    </form>
+        
+    </div>
+    <!--_footer 作为公共模版分离出去-->
+  <!--#include file="_footer.html"-->
+    <!--/_footer /作为公共模版分离出去-->
+    
+
+
+
 </body>
 </html>

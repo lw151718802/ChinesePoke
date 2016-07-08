@@ -27,5 +27,16 @@ namespace RM.MySQLBusines.DAL
             };
             return MySqlDataFactory.MySqlDataBase().ExecuteDataTable(strSql.ToString(), para);
         }
+
+
+        public DataTable Getgame_proxy_cardlogPage(StringBuilder SqlWhere, IList<MySqlParameter> IList_param, int pageIndex, int pageSize, ref int count)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(@"select A.*,B.`name`,B.uid from game_proxy_cardlog A LEFT JOIN game_user B
+on A.extend_01 = B.id where 1=1");
+            strSql.Append(SqlWhere);
+            return MySqlDataFactory.MySqlDataBase().GetPageList(strSql.ToString(), IList_param.ToArray(), "createdatetime", "Desc", pageIndex, pageSize, ref count);
+        }
+
     }
 }
